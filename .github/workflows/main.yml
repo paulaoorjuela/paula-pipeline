@@ -39,7 +39,7 @@ jobs:
         run: aws s3 rm s3://paula-pipeline --recursive
 
       - name: aws s3 upload archives
-        run: aws s3 cp ./dist/paula-pipeline-angular s3://paula-pipeline --recursive
+        run: aws s3 cp ./dist/paula-pipeline-angular/browser s3://paula-pipeline --recursive
 
 
 
