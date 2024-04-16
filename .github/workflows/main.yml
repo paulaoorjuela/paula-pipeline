@@ -24,8 +24,12 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: List dist files
-        run: ls
+      - name: List files and cd dist
+        run: ls && cd dist && cd paula-pipeline-angular
+
+      - name: empty S3
+        run: aws s3 rm s3://paula-pipeline --recursive
+
 
   # deploy:
   #   needs: build
