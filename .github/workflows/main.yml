@@ -33,10 +33,13 @@ jobs:
           echo "[default]" > ~/.aws/config
           echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}" >> ~/.aws/config
           echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/config
-          echo "region = us-east-1" >> ~/.aws/config
+          echo "region = us-east-2" >> ~/.aws/config
 
       - name: Empty AWS S3 bucket
         run: aws s3 rm s3://paula-pipeline --recursive
+
+      # - name: aws s3 upload archives
+      #   run: aws s3 cp ./dist/paula-pipeline/browser s3://paula-pipeline --recursive
 
 
 
