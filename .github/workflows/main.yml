@@ -25,10 +25,11 @@ jobs:
         run: npm run build
 
       - name: List files and cd dist
-        run: ls && cd dist && cd paula-pipeline-angular
+        run: ls && cd dist && ls
 
-      - name: empty S3
-        run: aws s3 rm s3://paula-pipeline --recursive
+      - name: install aws cli
+        run: sudo apt install awscli && aws --version
+
 
 
   # deploy:
